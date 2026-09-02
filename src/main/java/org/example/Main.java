@@ -21,10 +21,19 @@ public class Main {
                 2
         );
 
+        Triangle triangle = new Triangle(
+                new Vector3D(-1, -1, 5),
+                new Vector3D(1, -1, 5),
+                new Vector3D(0, 1, 5)
+        );
+
         scene.addShape(sphere1);
         scene.addShape(sphere2);
+        scene.addShape(triangle);
 
-        System.out.println("Shapes in scene: " + scene.getShapes().size());
+        System.out.println(
+                "Shapes in scene: " + scene.getShapes().size()
+        );
 
         for (Shape shape : scene.getShapes()) {
             HitResult hitResult = shape.hit(ray);

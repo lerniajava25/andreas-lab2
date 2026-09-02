@@ -18,4 +18,5 @@ public class Scene {
     public List<Shape> getShapes() {
         return shapes;
     }
+
 }
