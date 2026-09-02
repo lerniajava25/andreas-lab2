@@ -16,5 +16,17 @@ public class Main {
 System.out.println("X: " + difference.getX());
 System.out.println("Y: " + difference.getY());
 System.out.println("Z: " + difference.getZ());
+
+        Vector3D forward = new Vector3D(0, 0, 1);
+
+        Ray ray = new Ray(camera, forward);
+
+        System.out.println("Origin Z: " + ray.getOrigin().getZ());
+        System.out.println("Direction Z: " + ray.getDirection().getZ());
+
+        HitResult result = new HitResult(true, 4.0);
+
+        System.out.println("Hit: " + result.isHit());
+        System.out.println("Distance: " + result.getDistance());
 }}
 
