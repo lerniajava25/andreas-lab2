@@ -24,9 +24,19 @@ System.out.println("Z: " + difference.getZ());
         System.out.println("Origin Z: " + ray.getOrigin().getZ());
         System.out.println("Direction Z: " + ray.getDirection().getZ());
 
-        HitResult result = new HitResult(true, 4.0);
 
-        System.out.println("Hit: " + result.isHit());
+        Sphere sphereObject = new Sphere(
+                new Vector3D(5, 0, 5),
+                1
+        );
+
+        HitResult result = sphereObject.hit(ray);
+
+        System.out.println("Sphere hit: " + result.isHit());
         System.out.println("Distance: " + result.getDistance());
+
+
+
+
 }}
 
