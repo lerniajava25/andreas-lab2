@@ -2,17 +2,22 @@ package org.example;
 
 public class Triangle implements Shape {
 
+    private final Color color;
     private final Vector3D v0;
     private final Vector3D v1;
     private final Vector3D v2;
 
-    public Triangle(Vector3D v0, Vector3D v1, Vector3D v2) {
+    public Triangle(Vector3D v0, Vector3D v1, Vector3D v2, Color color) {
         this.v0 = v0;
         this.v1 = v1;
         this.v2 = v2;
+        this.color = color;
     }
 
     @Override
+    public Color getColor() {
+        return color;
+    }
     public HitResult hit(Ray ray) {
 
         double epsilon = 0.000001;

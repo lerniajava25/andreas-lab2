@@ -12,33 +12,30 @@ public class Main {
         Scene scene = new Scene();
 
         Sphere sphere1 = new Sphere(
-                new Vector3D(0, 0, 5),
-                1
+                new Vector3D(-1.5, 0, 6),
+                1,
+                new Color(255, 0, 0)
         );
 
         Sphere sphere2 = new Sphere(
-                new Vector3D(3, 0, 7),
-                2
+                new Vector3D(1.5, 0, 7),
+                1,
+                new Color(0, 0, 255)
         );
 
         Triangle triangle = new Triangle(
-                new Vector3D(-1, -1, 5),
-                new Vector3D(1, -1, 5),
-                new Vector3D(0, 1, 5)
+                new Vector3D(-1, -1.5, 5),
+                new Vector3D(1, -1.5, 5),
+                new Vector3D(0, 0.5, 5),
+                new Color(0, 255, 0)
         );
 
         scene.addShape(sphere1);
         scene.addShape(sphere2);
         scene.addShape(triangle);
 
-        System.out.println(
-                "Shapes in scene: " + scene.getShapes().size()
-        );
+        Renderer renderer = new Renderer(200, 200);
+        renderer.render(scene);
 
-        for (Shape shape : scene.getShapes()) {
-            HitResult hitResult = shape.hit(ray);
-
-            System.out.println("Hit: " + hitResult.isHit());
-        }
     }
 }
