@@ -44,12 +44,4 @@ public class Vector3D {
                 this.x * other.y - this.y * other.x
         );
     }
-
-    public Vector3D multiply(double scalar) {
-        return new Vector3D(
-                this.x * scalar,
-                this.y * scalar,
-                this.z * scalar
-        );
-    }
 }

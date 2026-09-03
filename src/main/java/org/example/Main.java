@@ -4,11 +4,6 @@ public class Main {
 
     static void main() {
 
-        Vector3D camera = new Vector3D(0, 0, 0);
-        Vector3D forward = new Vector3D(0, 0, 1);
-
-        Ray ray = new Ray(camera, forward);
-
         Scene scene = new Scene();
 
         Sphere sphere1 = new Sphere(
@@ -36,6 +31,5 @@ public class Main {
 
         Renderer renderer = new Renderer(200, 200);
         renderer.render(scene);
-
     }
 }
