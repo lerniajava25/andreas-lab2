@@ -1,20 +1,35 @@
 package org.example;
 
 public class Main {
+
     static void main() {
-        Vector3D position = new Vector3D(2, 3, 5);
 
-        System.out.println("X: " + position.getX());
-        System.out.println("Y: " + position.getY());
-        System.out.println("Z: " + position.getZ());
+        Scene scene = new Scene();
 
-    Vector3D camera = new Vector3D(0, 0, 0);
-    Vector3D sphere = new Vector3D(0, 0, 5);
+        Sphere sphere1 = new Sphere(
+                new Vector3D(-1.5, 0, 6),
+                1,
+                new Color(255, 0, 0)
+        );
 
-    Vector3D difference = sphere.subtract(camera);
+        Sphere sphere2 = new Sphere(
+                new Vector3D(1.5, 0, 7),
+                1,
+                new Color(0, 0, 255)
+        );
 
-System.out.println("X: " + difference.getX());
-System.out.println("Y: " + difference.getY());
-System.out.println("Z: " + difference.getZ());
-}}
+        Triangle triangle = new Triangle(
+                new Vector3D(-1, -1.5, 5),
+                new Vector3D(1, -1.5, 5),
+                new Vector3D(0, 0.5, 5),
+                new Color(0, 255, 0)
+        );
 
+        scene.addShape(sphere1);
+        scene.addShape(sphere2);
+        scene.addShape(triangle);
+
+        Renderer renderer = new Renderer(200, 200);
+        renderer.render(scene);
+    }
+}
